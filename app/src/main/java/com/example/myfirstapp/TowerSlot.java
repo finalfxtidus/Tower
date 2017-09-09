@@ -6,10 +6,17 @@ package com.example.myfirstapp;
 
 class TowerSlot {
 
-    String towerName = "No Tower";
+
+
+    private String towerName = "No Tower";
+
 
     public String getTowerName(){
 
         return towerName;
+    }
+
+    public void setTowerName(String towerName) {
+        this.towerName = towerName;
     }
 }
