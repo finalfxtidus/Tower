@@ -9,10 +9,11 @@ import java.util.ArrayList;
 public class IdleTowerSet {
     ArrayList<TowerSlot> towerSlotArray = new ArrayList<TowerSlot>();
 
+
     public IdleTowerSet(){
-        towerSlotArray.add(new TowerSlot());
-        towerSlotArray.add(new TowerSlot());
-        towerSlotArray.add(new TowerSlot());
+        addTowerSlot();
+        addTowerSlot();
+        addTowerSlot();
     }
 
     public String sendTowerListToConsole( ){
@@ -23,6 +24,10 @@ public class IdleTowerSet {
         }
 
         return towerListS;
+    }
+
+    public void addTowerSlot(){
+        towerSlotArray.add(new TowerSlot());
     }
 
 }
