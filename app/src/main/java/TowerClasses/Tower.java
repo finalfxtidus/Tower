@@ -6,7 +6,7 @@ package TowerClasses;
 
 public class Tower {
 
-
+    public double turretRange;
     public double turretAngle;
     public double projectileVelocity;
     public int damage = 0;

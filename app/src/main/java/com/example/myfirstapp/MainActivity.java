@@ -9,6 +9,9 @@ import android.widget.EditText;
 import java.util.ArrayList;
 
 import TowerClasses.FireballTower;
+import TowerClasses.IceTower;
+import TowerClasses.LightningTower;
+import TowerClasses.SniperTower;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -112,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower ==false){
-            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower("Lightning Tower"));
+            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower(new LightningTower()));
         }
         else {
             printLineToConsole("Tower Slot is full");
@@ -129,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower ==false){
-            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower("Ice Tower"));
+            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower(new IceTower()));
         }
         else {
             printLineToConsole("Tower Slot is full");
@@ -146,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower ==false){
-            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower("Sniper Tower"));
+            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower(new SniperTower()));
         }
         else {
             printLineToConsole("Tower Slot is full");
