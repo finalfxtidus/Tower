@@ -20,7 +20,7 @@ public class IdleTowerSet {
         String towerListS = "";
 
         for (int i = 0; i < towerSlotArray.size(); i++){
-            towerListS = towerListS.concat("Tower Number:" + (i + 1) + " Name:" + towerSlotArray.get(i).getTowerName() + "\n");
+            towerListS = towerListS.concat("Tower Number:" + (i + 1) + " Name:" + towerSlotArray.get(i).getTowerType() + "\n");
         }
 
         return towerListS;
