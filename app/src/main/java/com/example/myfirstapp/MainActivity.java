@@ -85,7 +85,72 @@ public class MainActivity extends AppCompatActivity {
             addfireballtower(parameterList);
 
         }
+        if (command.equals("addsnipertower")){
+            printLineToConsole("addsnipertower command recognised");
+            addsnipertower(parameterList);
 
+        }
+        if (command.equals("addicetower")){
+            printLineToConsole("addicetower command recognised");
+            addicetower(parameterList);
+
+        }
+        if (command.equals("addlightningtower")){
+            printLineToConsole("addlightningtower command recognised");
+            addlightningtower(parameterList);
+
+        }
+    }
+
+    private void addlightningtower(ArrayList<String> parameterList) {
+        int towerSlot = 1;
+        for (int i = 0; i <parameterList.size (); i++){
+            if (parameterList.get(i).equals("!slot")) {
+                if (parameterList.get(i + 1) != null);{
+                    towerSlot = Integer.parseInt(parameterList.get(i + 1));
+                }
+            }
+        }
+        if (cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower ==false){
+            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower("Lightning Tower"));
+        }
+        else {
+            printLineToConsole("Tower Slot is full");
+        }
+    }
+
+    private void addicetower(ArrayList<String> parameterList) {
+        int towerSlot = 1;
+        for (int i = 0; i <parameterList.size (); i++){
+            if (parameterList.get(i).equals("!slot")) {
+                if (parameterList.get(i + 1) != null);{
+                    towerSlot = Integer.parseInt(parameterList.get(i + 1));
+                }
+            }
+        }
+        if (cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower ==false){
+            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower("Ice Tower"));
+        }
+        else {
+            printLineToConsole("Tower Slot is full");
+        }
+    }
+
+    private void addsnipertower(ArrayList<String> parameterList) {
+        int towerSlot = 1;
+        for (int i = 0; i <parameterList.size (); i++){
+            if (parameterList.get(i).equals("!slot")) {
+                if (parameterList.get(i + 1) != null);{
+                    towerSlot = Integer.parseInt(parameterList.get(i + 1));
+                }
+            }
+        }
+        if (cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower ==false){
+            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower("Sniper Tower"));
+        }
+        else {
+            printLineToConsole("Tower Slot is full");
+        }
     }
 
     private void addfireballtower(ArrayList<String> parameterList) {
