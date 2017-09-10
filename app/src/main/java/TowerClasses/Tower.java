@@ -15,6 +15,7 @@ public class Tower {
     int yPos;
     double splash = 0;
     String towerType = "No Tower";
+    int towerLevel;
 
     public void setProjectileVelocity(double projectileVelocity) {
         this.projectileVelocity = projectileVelocity;

@@ -1,4 +1,4 @@
-package com.example.myfirstapp;
+package TowerClasses;
 
 import TowerClasses.Tower;
 
@@ -6,12 +6,12 @@ import TowerClasses.Tower;
  * Created by final on 9/9/2017.
  */
 
-class TowerSlot {
+public class TowerSlot {
 
 
 
 
-    boolean hasTower = false;
+    public boolean hasTower = false;
     Tower currentTower;
 
     public TowerSlot(){

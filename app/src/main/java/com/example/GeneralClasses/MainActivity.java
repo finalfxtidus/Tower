@@ -1,4 +1,4 @@
-package com.example.myfirstapp;
+package com.example.GeneralClasses;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -78,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        //TODO add command for upgrading the level of a tower in a particular slot
+
+        //TODO add command for advancing level in campaign, format will be cpadv !cp (story,idle) !level (number of levels to advance)
+
         if (command.equals("idletowers")){
             printLineToConsole("idletowers command recognised");
             idletowersCommand(parameterList);
@@ -113,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
                     towerSlot = Integer.parseInt(parameterList.get(i + 1));
                 }
             }
+            //TODO add another parameter to change spawned tower level
+            //TODO add another parameter to determine tower type, so that we can condense tower spawning to one command
         }
         if (cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower ==false){
             printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower(new LightningTower()));

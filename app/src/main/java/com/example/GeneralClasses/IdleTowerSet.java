@@ -1,6 +1,8 @@
-package com.example.myfirstapp;
+package com.example.GeneralClasses;
 
 import java.util.ArrayList;
+
+import TowerClasses.TowerSlot;
 
 /**
  * Created by final on 9/9/2017.
@@ -20,6 +22,7 @@ public class IdleTowerSet {
         String towerListS = "";
 
         for (int i = 0; i < towerSlotArray.size(); i++){
+            //TODO add tower level to the tower output information
             towerListS = towerListS.concat("Tower Number:" + (i + 1) + " Name:" + towerSlotArray.get(i).getTowerType() + "\n");
         }
 
