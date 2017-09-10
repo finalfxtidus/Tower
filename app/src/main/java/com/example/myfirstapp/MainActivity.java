@@ -2,7 +2,7 @@ package com.example.myfirstapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -45,9 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (cmdIndex != -1) {
             command = cmdText.substring(0, cmdIndex);
+            Log.d("myTag", "Command " + command + " detected");
 
-            if (command.length() > cmdText.length()) {
+            if (command.length() < cmdText.length()) {
                 parameterString = cmdText.substring(cmdIndex + 1);
+                Log.d("myTag", "Remaining Text = " + parameterString);
             }
 
 
@@ -60,12 +62,15 @@ public class MainActivity extends AppCompatActivity {
                     paramIndex = parameterString.length();
                 }
                 parameterList.add(parameterString.substring(0, paramIndex));
-                if (parameterString.isEmpty()) {
-                    c = 0;
-                }
-                if (!parameterString.isEmpty()) {
+                if (parameterString.substring(0, paramIndex).length() < parameterString.length()) {
                     parameterString = parameterString.substring(paramIndex + 1);
+                    Log.d("myTag", "Remaining Text = " + parameterString);
                 }
+                else {
+                    c = 0;
+                    Log.d("myTag", "Loop has been broken");
+                }
+
 
 
             }
@@ -75,6 +80,36 @@ public class MainActivity extends AppCompatActivity {
             printLineToConsole("idletowers command recognised");
             idletowersCommand(parameterList);
 
+        }
+        if (command.equals("addfbtower")){
+            printLineToConsole("addfbtower command recognised");
+            addfireballtower(parameterList);
+
+        }
+
+    }
+
+    private void addfireballtower(ArrayList<String> parameterList) {
+        int towerSlot = 1;
+        for (int i = 0; i < parameterList.size(); i++){
+            Log.d ("myTag", "Loop Number: " + (i+1) );
+            if (parameterList.get(i).equals("!slot")) {
+                Log.d ("myTag", "!slot detected in parameted list" );
+
+               if (parameterList.get(i + 1) != null);{
+                    towerSlot = Integer.parseInt(parameterList.get(i + 1));
+                    Log.d("myTag", "TowerSlot " + towerSlot + " selected");
+               }
+
+
+
+            }
+        }
+        if ( cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower == false) {
+            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower("Fireball"));
+        }
+        else {
+            printLineToConsole("Tower Slot is full");
         }
 
     }

@@ -9,6 +9,7 @@ class TowerSlot {
 
 
     private String towerName = "No Tower";
+    boolean hasTower = false;
 
 
     public String getTowerName(){
@@ -16,7 +17,10 @@ class TowerSlot {
         return towerName;
     }
 
-    public void setTowerName(String towerName) {
+    public String setTower(String towerName) {
         this.towerName = towerName;
+        this.hasTower = true;
+
+        return "A " + towerName + " Tower has been added";
     }
 }
