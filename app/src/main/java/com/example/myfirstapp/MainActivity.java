@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 
+import TowerClasses.FireballTower;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -49,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
             if (command.length() < cmdText.length()) {
                 parameterString = cmdText.substring(cmdIndex + 1);
-                Log.d("myTag", "Remaining Text = " + parameterString);
             }
 
 
@@ -64,11 +65,9 @@ public class MainActivity extends AppCompatActivity {
                 parameterList.add(parameterString.substring(0, paramIndex));
                 if (parameterString.substring(0, paramIndex).length() < parameterString.length()) {
                     parameterString = parameterString.substring(paramIndex + 1);
-                    Log.d("myTag", "Remaining Text = " + parameterString);
                 }
                 else {
                     c = 0;
-                    Log.d("myTag", "Loop has been broken");
                 }
 
 
@@ -157,13 +156,10 @@ public class MainActivity extends AppCompatActivity {
     private void addfireballtower(ArrayList<String> parameterList) {
         int towerSlot = 1;
         for (int i = 0; i < parameterList.size(); i++){
-            Log.d ("myTag", "Loop Number: " + (i+1) );
             if (parameterList.get(i).equals("!slot")) {
-                Log.d ("myTag", "!slot detected in parameted list" );
 
                if (parameterList.get(i + 1) != null);{
                     towerSlot = Integer.parseInt(parameterList.get(i + 1));
-                    Log.d("myTag", "TowerSlot " + towerSlot + " selected");
                }
 
 
@@ -171,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if ( cIdleTowerSet.towerSlotArray.get(towerSlot-1).hasTower == false) {
-            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower("Fireball Tower"));
+            printLineToConsole(cIdleTowerSet.towerSlotArray.get(towerSlot - 1).setTower(new FireballTower()));
         }
         else {
             printLineToConsole("Tower Slot is full");
